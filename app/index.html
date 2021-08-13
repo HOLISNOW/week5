@@ -5,54 +5,287 @@ engine: ejs
 current: index
 ---
 
-<div class="container">
-  <h1 class="index__h1">這是一段話</h1>
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    A simple secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    A simple light alert—check it out!
-  </div>
-  <div class="alert alert-dark" role="alert">
-    A simple dark alert—check it out!
-  </div>
+<div class="admin container d-flex flex-column justify-content-center container-lgs mx-5">
+  <nav class="navbar pt-6 pb-4">
+    <!-- 最左邊的標題跟新增相簿的Modal -->
+    <div class="nav-items d-flex align-items-center ">
+      <h2 class="h3 fw-bold m-0 me-5">Admin</h2>
+      <!-- Button trigger modal : Add New Admin -->
+      <button type="button" class="btn btn-hover d-inline-flex fw-bold" data-bs-toggle="modal" data-bs-target="#addadminModal">
+        <span class="material-icons text-success me-2">add</span>Add New Admin
+      </button>
+    </div>
+    <!-- 最右邊的搜尋跟小鈴鐺 -->
+    <div class="d-flex">
+      <a class="nav-link p-1 link-dark link-hover d-inline-flex me-4" href="#">
+        <span class="material-icons">search</span></a>
+      <a class="nav-link p-1 link-dark d-inline-flex" href="#">
+        <span class="material-icons">notifications_active
+        </span></a>
+    </div>
+  </nav>   
+<!-- modal : add new admin -->
+<div class="modal fade" id="addadminModal" tabindex="0" aria-labelledby="addadminModalLabel aria-hidden=" true"-1"> 
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header px-4 py-4">
+              <h5 class="h4 fw-bold modal-title" id="addadminModal">New Admin</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-4">
+              <form class="border-bottom pb-4 mb-4">
+                <p class="h5 fw-bold">Account</p>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label mb-1">Name</label>
+                  <input type="email" class="form-control border-dark" id="exampleInputEmail1" aria-describedby="emailHelp"></div>
+                <div>
+                  <label for="exampleInputEmail" class="form-label mb-1">Email</label>
+                  <input type="email" class="form-control border-dark" id="exampleInputEmail">
+                </div>
+                </form>
+              <form class="border-bottom pb-4 mb-4">
+                <p class="h5 fw-bold">Verification</p>
+                <div class="mb-3">
+                  <span class="material-icons fs-4 text-danger align-middle me-2">warning</span>
+                  <span class="align-middle fw-bold">Unverified</span>
+                  </div>
+                <button type="button" class="btn btn-outline-secondary container-fluid py-3 fw-bold text-success" disabled>Send Verification Mail
+                </button> 
+                </form>
+              <form class="border-bottom pb-4 mb-4">
+                <p class="h5 fw-bold">Access Level</p>
+      <div class="dropdown">
+        <button class="btn btn-outline-dark dropdown-toggle container-fluid text-start text-gray p-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          -Choose access level-
+        </button>
+        <ul class="dropdown-menu container-fluid" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">level 1</a></li>
+          <li><a class="dropdown-item" href="#">level 2</a></li>
+          <li><a class="dropdown-item" href="#">level 3</a></li>
+        </ul>
+      </div> 
+      </form>
+        <form class="mb-3">
+          <p class="h5 fw-bold">Custom Access</p>
+          <ul class="list-unstyled">
+            <li class="p-2">
+            <input class="form-check-input me-2" type="checkbox" value="" aria-label="...">
+            Lecture
+            </li>
+            <li class="p-2">
+              <input class="form-check-input me-2" type="checkbox" value="" aria-label="...">
+              Coupon
+            </li>
+            <li class="p-2">
+              <input class="form-check-input me-2" type="checkbox" value="" aria-label="...">
+              Message
+            </li>
+            <li class="p-2">
+              <input class="form-check-input me-2" type="checkbox" value="" aria-label="...">
+              Setting
+            </li>
+            <li class="p-2">
+              <input class="form-check-input me-2" type="checkbox" value="" aria-label="...">
+              Task Menu
+            </li>
+          </ul> 
+        </form>
+      </div>      
+            <div class="modal-footer px-4 py-3">
+              <button type="button" class="btn btn-outline-success py-2 px-4 me-3" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-success py-2 px-4">Add</button>
+            </div>
+          </div>
+        </div>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+<!-- modal : check -->
+<div class="modal fade" id="checkModal" tabindex="-1" aria-labelledby="checkModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" id="checkModal">
+      <div class="modal-body d-flex p-6">
+        <img class="cover" src="./assets/images/emir.jpeg" alt="emir">
+        <div class="flex-grow-1 ms-4">
+          <div class="d-flex justify-content-between mb-2">
+          <p>#1</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <p class="m-0">Admin</p>
+          <p class="mb-2 fs-4 fw-bold">Emir Wicks</p>
+          <p class="mb-7 text-secondary fs-0">emir.wicks@mail.com</p>
+          <!-- Verified Accordion -->
+          <a class="d-flex justify-content-between" data-bs-toggle="collapse" href="#verifiedCollaps" role="button" aria-expanded="true" aria-controls="collapse">
+            <span class="fs-0">Verified</span>
+            <span class="material-icons">expand_more</span>
+          </a>
+          <div class="collapse show d-flex justify-content-between pt-6" id="verifiedCollaps">
+            <button type="button" class="btn btn-outline-danger py-2 px-6 fw-blod" data-bs-dismiss="modal">Deactivate</button>
+            <button type="button" class="btn btn-primary py-2 px-6 fw-blod">Edit</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+  <!-- 中間表格 -->
+  <table class="table table-hover mb-5">
+    <thead>
+      <tr>
+        <th scope="col">ID<span class="material-icons align-middle fs-6 text-success">arrow_downward</span>
+        </th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Verified</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#1</td>
+        <td>Emir Wicks</td>
+        <td>emir.wicks@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="material-icons" data-bs-toggle="modal" data-bs-target="#checkModal" href="#">visibility</a>
+        </a>
+        </td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#2</td>
+        <td>Zaina Goldsmith</td>
+        <td>zaina.goldsmith@mail.com</td>
+        <td>Yes</td>
+        <td><a href="#" class="nav-lin"><span class="material-icons">
+  visibility
+  </span></a></td>
+        <td><a href="#" class="nav-lin"><span class="material-icons">edit</span></a></td>
+      </tr>
+      <tr>
+        <td>#3</td>
+        <td>Mahima Lopez</td>
+        <td>mahima.lopez@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#4</td>
+        <td>Pharrell Murray</td>
+        <td>pharrell.murray@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#5</td>
+        <td>Annika Mcbride</td>
+        <td>annika.mcbride@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#6</td>
+        <td>Fatimah Clark</td>
+        <td>fatimah.clark@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#7</td>
+        <td>Klaudia Rhodes</td>
+        <td>klaudia.rhodes@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#8</td>
+        <td>Tillie Lucero</td>
+        <td>tillie.lucero@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#9</td>
+        <td>Sabrina Stephenson</td>
+        <td>sabrina.stephenson@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+      <tr>
+        <td>#10</td>
+        <td>Annie Smith</td>
+        <td>annie.smith@mail.com</td>
+        <td>Yes</td>
+        <td><span class="material-icons">
+  visibility
+  </span></td>
+        <td><span class="material-icons">
+  edit
+  </span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- pagination 換頁 -->
+  <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end mb-6">
+    <li class="page-item">
+      <a class="page-link px-1 py-1" href="#" aria-label="Previous">
+        <span aria-hidden="true" class="material-icons">chevron_left</span>
+      </a>
+    </li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link px-1 py-1" href="#" aria-label="Next">
+        <span aria-hidden="true" class="material-icons">chevron_right</span>
+      </a>
+    </li>
+  </ul>
+  </nav>
+  
+</div>
+
+

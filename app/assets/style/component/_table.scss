@@ -1,0 +1,12 @@
+//tr跟左右間距
+.table > :not(caption) > * > * {
+    padding: 1rem 0.5rem;
+    vertical-align: middle;
+}
+
+.table{
+    thead th{
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    }
+}

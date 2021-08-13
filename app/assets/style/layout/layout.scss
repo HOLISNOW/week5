@@ -1,0 +1,39 @@
+.logo{
+    margin-right: 100px;
+    a{
+    display: block;
+    background: url(../images/logo-ANSWER.svg);
+    width: 151px;
+    height: 40px;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+    }   
+}
+
+.nav-link{
+    position: relative;
+    &:hover{
+        &::before{
+            position: absolute;
+            content: "";
+            width: 0.25rem;
+            height: 2rem;
+            background-color: $primary;
+            top: 10%;
+            left: 0;
+
+        }
+        
+    }
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    background-image: url(../images/andychen.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
