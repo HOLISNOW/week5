@@ -4,4 +4,11 @@
   font-weight: 400;
 }
 
+.cover {
+  width: 141px;
+  height: 141px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /*# sourceMappingURL=index.css.map */
