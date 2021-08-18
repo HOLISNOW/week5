@@ -12573,7 +12573,17 @@ fieldset:disabled .btn {
 .page-link {
   border: 1px solid #198754;
   color: #198754;
-  padding: 6px 12px;
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .page-link:hover {
